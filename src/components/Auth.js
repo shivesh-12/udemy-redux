@@ -1,5 +1,7 @@
-import classes from './Auth.module.css';
 import React from 'react';
+
+import classes from './Auth.module.css';
+
 const Auth = () => {
   return (
     <main className={classes.auth}>
