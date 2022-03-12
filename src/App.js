@@ -1,11 +1,8 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import Counter from './components/Counter';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+function App() {
+  return <Counter />;
 }
+
+export default App;
