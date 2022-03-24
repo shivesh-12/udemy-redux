@@ -8,6 +8,12 @@ const counterReducer = (state = { counter: 0 }, action) => {
     };
   }
 
+  if (action.type === 'increse') {
+    return {
+      counter: state.counter + action.value,
+    };
+  }
+
   if (action.type === 'decrement') {
     return {
       counter: state.counter - 1,
