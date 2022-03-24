@@ -18,7 +18,9 @@ const Counter = () => {
     dispatch({ type: 'decrement' });
   };
 
-  const toggleCounterHandler = () => {};
+  const toggleCounterHandler = () => {
+    
+  };
 
   return (
     <main className={classes.counter}>
