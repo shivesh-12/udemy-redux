@@ -6,7 +6,7 @@ const counterReducer = (state = initialState, action) => {
     return {
       counter: state.counter + 1,
       showCounter: state.showCounter,
-    };
+    }; 
   }
 
   if (action.type === 'increse') {
