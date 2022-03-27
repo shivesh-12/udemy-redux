@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import { useSelector, useDispatch, connect } from 'react-redux';
 import classes from './Counter.module.css';
+import { counterActions } from '../store/index';
 
 const Counter = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter);
-  const show = useSelector(state => state.showCounter);
+  const show = useSelector((state) => state.showCounter);
 
   const incrementHandler = () => {
-    dispatch({ type: 'increment' });
+    dispatch(counterActions.increment());
   };
 
   const increseandler = () => {
-    dispatch({ type: 'increse', value: 10 });
+    // react will automatically create action object which is dispatch {type: some unique identifier, payload:""}
+    // payload field name is default redux toolkit uses.
+    dispatch(counterActions.increase(10));
   };
 
   const decrementHandler = () => {
-    dispatch({ type: 'decrement' });
+    dispatch(counterActions.decrement());
   };
 
   const toggleCounterHandler = () => {
-    dispatch({type:'toggle'})
+    dispatch(counterActions.toggleCounter());
   };
 
   return (
@@ -34,7 +37,7 @@ const Counter = () => {
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
     </main>
-  ); 
+  );
 };
 export default Counter;
 /*
