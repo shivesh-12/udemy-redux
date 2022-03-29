@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Header.module.css';
 
-const Header = () => {
+const Header = ({ isLoggedIn, logoutHandler }) => {
   const showMenu = () => {
     return (
       <nav>
@@ -13,7 +13,7 @@ const Header = () => {
             <a href="/">My Sales</a>
           </li>
           <li>
-            <button>Logout</button>
+            <button onClick={logoutHandler}>Logout</button>
           </li>
         </ul>
       </nav>
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <h1>Redux Auth</h1>
-      {showMenu()}
+      {isLoggedIn && showMenu()}
     </header>
   );
 };

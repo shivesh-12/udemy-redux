@@ -10,7 +10,7 @@ function App() {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
   return (
     <Fragment>
-      <Header isLoggedIn={isLoggedIn/>
+      <Header isLoggedIn={isLoggedIn} />
       {!isLoggedIn && <Auth />}
       <Counter />
     </Fragment>
