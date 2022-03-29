@@ -6,10 +6,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from './store/index';
 
 function App() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
   return (
     <Fragment>
-      <Header />
-      <Auth />
+      <Header isLoggedIn={isLoggedIn/>
+      {!isLoggedIn && <Auth />}
       <Counter />
     </Fragment>
   );
