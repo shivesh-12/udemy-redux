@@ -3,6 +3,11 @@ import React from 'react';
 import classes from './Auth.module.css';
 
 const Auth = ({ loginHandler }) => {
+  const clickHandler = (event) => {
+    event.preventDefault();
+    loginHandler();
+  };
+
   return (
     <main className={classes.auth}>
       <section>
@@ -15,7 +20,7 @@ const Auth = ({ loginHandler }) => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" />
           </div>
-          <button onClick={loginHandler}>Login</button>
+          <button onClick={clickHandler}>Login</button>
         </form>
       </section>
     </main>
