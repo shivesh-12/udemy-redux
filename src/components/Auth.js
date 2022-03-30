@@ -1,17 +1,20 @@
 import React from 'react';
-
+import { useDispatch } from 'react-redux';
+import { authActions } from '../store/index';
 import classes from './Auth.module.css';
 
-const Auth = ({ loginHandler }) => {
-  const clickHandler = (event) => {
+const Auth = () => {
+  const dispatch = useDispatch();
+
+  const loginHandler = (event) => {
     event.preventDefault();
-    loginHandler();
+    dispatch(authActions.login());
   };
 
   return (
     <main className={classes.auth}>
       <section>
-        <form>
+        <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" />
@@ -20,7 +23,7 @@ const Auth = ({ loginHandler }) => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" />
           </div>
-          <button onClick={clickHandler}>Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>
