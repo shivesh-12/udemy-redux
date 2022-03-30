@@ -20,7 +20,7 @@ function App() {
       {isAuth && <UserProfile />}
       <Counter />
     </Fragment>
-  );
+  ); 
 }
 
 export default App;
